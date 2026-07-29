@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxStay Hotel - Modern Booking</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Poppins for a modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo"><a href="#">LuxStay Hotel</a></h1>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#rooms-section">Rooms</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Experience Unforgettable Stays</h2>
+                <p>Book your perfect room with us today and enjoy unparalleled comfort.</p>
+                <div class="booking-form-card">
+                    <h3>Find Your Perfect Room</h3>
+                    <form id="availability-form" class="booking-form">
+                        <div class="form-group">
+                            <label for="check-in">Check-in Date</label>
+                            <input type="date" id="check-in" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="check-out">Check-out Date</label>
+                            <input type="date" id="check-out" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="guests">Guests</label>
+                            <input type="number" id="guests" min="1" value="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="room-type">Room Type</label>
+                            <select id="room-type">
+                                <option value="Any">Any</option>
+                                <option value="Single">Single</option>
+                                <option value="Double">Double</option>
+                                <option value="Family">Family</option>
+                                <option value="Suite">Suite</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Check Availability</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="rooms-section" class="rooms-section">
+            <div class="container">
+                <h2>Available Rooms</h2>
+                <div id="rooms-list" class="rooms-grid">
+                    <p class="no-rooms-message">Please select your dates and guests to find available rooms.</p>
+                    <!-- Room cards will be inserted here by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 LuxStay Hotel. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Complete Your Booking</h2>
+            <div id="modal-room-details">
+                <!-- Room details will be populated here -->
+            </div>
+            <form id="booking-details-form" class="booking-form">
+                <div class="form-group">
+                    <label for="guest-name">Full Name</label>
+                    <input type="text" id="guest-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="guest-email">Email Address</label>
+                    <input type="email" id="guest-email" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Confirm Booking</button>
+            </form>
+            <div id="booking-message" class="message"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

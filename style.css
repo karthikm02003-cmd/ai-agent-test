@@ -1,0 +1,505 @@
+/* Basic Resets & Typography */
+:root {
+    --primary-color: #3f51b5; /* Indigo */
+    --primary-dark: #303f9f;
+    --accent-color: #ff9800; /* Orange */
+    --background-light: #f4f7f6;
+    --text-dark: #333;
+    --text-light: #fff;
+    --border-color: #ddd;
+    --card-bg: #fff;
+    --shadow-light: rgba(0,0,0,0.08);
+    --shadow-medium: rgba(0,0,0,0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--background-light);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header */
+.header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px var(--shadow-medium);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.logo a {
+    color: var(--text-light);
+    text-decoration: none;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav ul li {
+    margin-left: 20px;
+}
+
+.nav ul li a {
+    color: var(--text-light);
+    font-weight: 400;
+    padding: 5px 0;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.nav ul li a:hover,
+.nav ul li a.active {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://via.placeholder.com/1500x500/3f51b5/FFFFFF?text=LuxStay+Hotel+Banner') no-repeat center center/cover;
+    color: var(--text-light);
+    text-align: center;
+    padding: 80px 0;
+    position: relative;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    min-height: 400px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+.booking-form-card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px var(--shadow-medium);
+    max-width: 900px;
+    margin: 40px auto 0;
+    text-align: left;
+    color: var(--text-dark);
+}
+
+.booking-form-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    text-align: center;
+    color: var(--primary-dark);
+}
+
+.booking-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    align-items: flex-end; /* Align button to bottom if form fields vary in height */
+}
+
+.booking-form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-form label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.booking-form input[type="date"],
+.booking-form input[type="number"],
+.booking-form select,
+.booking-form input[type="text"],
+.booking-form input[type="email"] {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.booking-form input:focus,
+.booking-form select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(63, 81, 181, 0.2);
+    outline: none;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    border: none;
+    text-align: center;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Rooms Section */
+.rooms-section {
+    padding: 40px 0;
+}
+
+.rooms-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--primary-dark);
+}
+
+.rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.room-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--shadow-light);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.room-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px var(--shadow-medium);
+}
+
+.room-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.room-card-content {
+    padding: 20px;
+    flex-grow: 1; /* Makes content fill remaining space */
+    display: flex;
+    flex-direction: column;
+}
+
+.room-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--primary-dark);
+}
+
+.room-card p {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.room-card .price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-top: auto; /* Pushes price to the bottom before button */
+    margin-bottom: 15px;
+}
+
+.room-card .price span {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #888;
+}
+
+/* No Rooms Message */
+.no-rooms-message {
+    text-align: center;
+    grid-column: 1 / -1; /* Span all columns */
+    font-size: 1.1rem;
+    color: #888;
+    padding: 30px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 2px 8px var(--shadow-light);
+}
+
+
+/* Footer */
+.footer {
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 50px;
+}
+
+/* Modal Styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    margin: auto;
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 20px var(--shadow-medium);
+    position: relative;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.modal.active .modal-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.modal-content h2 {
+    color: var(--primary-dark);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--text-dark);
+}
+
+#modal-room-details {
+    background-color: var(--background-light);
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border: 1px dashed var(--border-color);
+}
+
+#modal-room-details h3 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+#modal-room-details p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+#booking-details-form {
+    display: block; /* Override grid for modal form */
+    margin-top: 20px;
+}
+#booking-details-form .form-group {
+    margin-bottom: 15px;
+}
+
+.message {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.message.success {
+    background-color: #d4edda; /* Light green */
+    color: #155724; /* Dark green */
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background-color: #f8d7da; /* Light red */
+    color: #721c24; /* Dark red */
+    border: 1px solid #f5c6cb;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .booking-form {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+    }
+    .nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .nav ul li {
+        margin: 5px 10px;
+    }
+
+    .hero {
+        padding: 60px 0;
+        min-height: 300px;
+    }
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .booking-form-card {
+        padding: 20px;
+    }
+    .booking-form {
+        grid-template-columns: 1fr; /* Stack inputs vertically */
+    }
+    .booking-form button {
+        grid-column: span 1;
+        width: 100%;
+    }
+    .rooms-grid {
+        grid-template-columns: 1fr; /* Single column for rooms */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.5rem;
+    }
+    .nav ul li {
+        margin: 0 5px;
+    }
+    .hero h2 {
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 0.9rem;
+    }
+    .booking-form-card h3 {
+        font-size: 1.5rem;
+    }
+    .rooms-section h2 {
+        font-size: 2rem;
+    }
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    .modal-content {
+        padding: 20px;
+    }
+    .close-button {
+        font-size: 24px;
+        top: 10px;
+        right: 15px;
+    }
+}
